@@ -18,6 +18,24 @@ namespace Reef.Controllers
         }
 
         // GET api/values/5
+        /// <summary>
+        /// Creates a TodoItem.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Item1",
+        ///        "isComplete": true
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>A newly created TodoItem</returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response>
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
@@ -37,6 +55,10 @@ namespace Reef.Controllers
         }
 
         // DELETE api/values/5
+        /// <summary>
+        /// Deletes a specific TodoItem.
+        /// </summary>
+        /// <param name="id"></param>    
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
